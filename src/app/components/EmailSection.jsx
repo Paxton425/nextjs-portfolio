@@ -11,15 +11,13 @@ const EmailSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
-      apikey: "2F12778742A89C679C1D8BDEE6357DC7168E13BBD4C1440B029AE47A09E8DCF1114B4AC8851D98D3025C0724F6863D72",
       subject: e.target.subject.value,
-      from: "phillgaxsphe@gmail.com",
-      to: "philgax2380@gmail.com",
-      bodyHrtml: "<h2>Html Body</h2>",
-      bodyText: e.target.message.value,
+      from: e.target.email.value,
+      to: "philgaxsphe@gmail.com",
+      message: e.target.message.value,
     };
     const JSONdata = JSON.stringify(data);
-    const endpoint = "https://api.elasticemail.com/v2/email/send";
+    const endpoint = "/api/send";
 
     // Form the request for sending data to the server.
     const options = {
@@ -37,7 +35,7 @@ const EmailSection = () => {
     const resData = await response.json();
 
     if (response.status === 200) {
-      console.log("Message sent.");
+      console.log("Message sent.", JSONdata);
       setEmailSubmitted(true);
     }
   };
