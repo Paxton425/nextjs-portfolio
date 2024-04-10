@@ -47,7 +47,7 @@ const HeroSection = () => {
               Hire Me
             </Link>
             <Link
-              href="/"
+              href="https://dut4lifeac-my.sharepoint.com/:b:/g/personal/22008008_dut4life_ac_za/ERfZbg-jfDVBr0oTkEEvh7cBcxHOyg5pvHeMuEga7IwFpg?e=dg7Kz4"
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-400 hover:bg-slate-800 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
