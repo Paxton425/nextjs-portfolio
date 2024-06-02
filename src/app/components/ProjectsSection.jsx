@@ -10,7 +10,7 @@ const projectsData = [
     title: "React Portfolio Website",
     description: "Project 1 description",
     image: "/images/projects/1.png",
-    tag: ["All", "Web"],
+    tag: ["All", "React"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -19,7 +19,7 @@ const projectsData = [
     title: "Invoice Generator App",
     description: "A react.js web app that generates invoices for inserted product data.",
     image: "/images/projects/2.png",
-    tag: ["All", "Web"],
+    tag: ["All", "React"],
     gitUrl: "https://github.com/Paxton425/invoice-generator",
     previewUrl: "https://paxton425.github.io/invoice-generator/",
   },
@@ -28,7 +28,7 @@ const projectsData = [
     title: "E-commerce Application",
     description: "Laravel full-stack e-commerce website.",
     image: "/images/projects/3.png",
-    tag: ["All", "Web"],
+    tag: ["All", "PHP"],
     gitUrl: "https://github.com/Paxton425/laravel-ecommerce",
     previewUrl: "/",
   },
@@ -37,14 +37,14 @@ const projectsData = [
     title: "Food Ordering Application",
     description: "Project 4 description",
     image: "/images/projects/4.png",
-    tag: ["All", "Mobile"],
+    tag: ["All", ".NET"],
     gitUrl: "/",
     previewUrl: "/",
   },
   {
     id: 5,
-    title: "Netfx- Webdev bussiness website",
-    description: "A demo website for an software development IT bussiness",
+    title: "IT bussiness website",
+    description: "A demo website for an IT bussiness",
     image: "/images/projects/5.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Paxton425/netfocalexpress/tree/main",
@@ -101,13 +101,18 @@ const ProjectsSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
+          name="React.js"
+          isSelected={tag === "React"}
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
+          name="PHP"
+          isSelected={tag === "PHP"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name=".NET MVC"
+          isSelected={tag === ".NET"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">

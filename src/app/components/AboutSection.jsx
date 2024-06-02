@@ -14,7 +14,7 @@ const TAB_DATA = [
         <li>Node.js</li>
         <li>Next.js</li>
         <li>Java(Core Java)</li>
-        <li>Spring</li>
+        <li>.NET CORE MVC(C#)</li>
         <li>SQL</li>
         <li>PHP(Laravel)</li>
       </ul>
