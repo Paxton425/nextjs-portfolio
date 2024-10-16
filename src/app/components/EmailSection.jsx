@@ -13,7 +13,6 @@ const EmailSection = () => {
     const data = {
       subject: e.target.subject.value,
       from: e.target.email.value,
-      to: "philgaxsphe@gmail.com",
       message: e.target.message.value,
     };
     const JSONdata = JSON.stringify(data);

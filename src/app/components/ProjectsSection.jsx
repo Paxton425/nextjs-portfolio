@@ -19,7 +19,7 @@ const projectsData = [
     title: "Invoice Generator App",
     description: "A react.js web app that generates invoices for inserted product data.",
     image: "/images/projects/2.png",
-    tag: ["All", "React"],
+    tag: ["All", "React.js"],
     gitUrl: "https://github.com/Paxton425/invoice-generator",
     previewUrl: "https://paxton425.github.io/invoice-generator/",
   },
@@ -37,7 +37,7 @@ const projectsData = [
     title: "Food Ordering Application",
     description: "Project 4 description",
     image: "/images/projects/4.png",
-    tag: ["All", ".NET"],
+    tag: ["All", ".NET MVC"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -102,7 +102,7 @@ const ProjectsSection = () => {
         <ProjectTag
           onClick={handleTagChange}
           name="React.js"
-          isSelected={tag === "React"}
+          isSelected={tag === "React.js"}
         />
         <ProjectTag
           onClick={handleTagChange}
@@ -112,7 +112,7 @@ const ProjectsSection = () => {
         <ProjectTag
           onClick={handleTagChange}
           name=".NET MVC"
-          isSelected={tag === ".NET"}
+          isSelected={tag === ".NET MVC"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
