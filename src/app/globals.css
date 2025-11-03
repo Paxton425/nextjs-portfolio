@@ -25,3 +25,39 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/*
+ * This class will be applied to the Link component
+ * to create the animated underline.
+ */
+ .nav-link-underline {
+  /* Establish a relative positioning context for the pseudo-element */
+  position: relative;
+  /* Ensure text is visible above the pseudo-element */
+  z-index: 10;
+}
+
+.nav-link-underline::after {
+  /* The pseudo-element that will act as the underline */
+  content: '';
+  /* Position it at the bottom of the link */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* Initial state: full height, but zero width */
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  /* Color of the underline (e.g., white or a primary color) */
+  background-color: #fff; 
+  /* Smooth transition for the width property */
+  transition: width 0.3s ease-in-out; 
+  /* Place the underline behind the text */
+  z-index: 0; 
+}
+
+/* * On hover, expand the width of the pseudo-element 
+ * from 0 to 100% to create the animation.
+ */
+.nav-link-underline:hover::after {
+  width: 100%;
+}
