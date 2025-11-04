@@ -2,12 +2,9 @@
 import React from "react";
 import dynamic from "next/dynamic";
 
-const AnimatedNumbers = dynamic(
-  () => {
-    return import("react-animated-numbers");
-  },
-  { ssr: false }
-);
+const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
+  ssr: false,
+});
 
 const achievementsList = [
   {
@@ -17,7 +14,7 @@ const achievementsList = [
   },
   {
     prefix: "~",
-    metric: "Users",
+    metric: "Viewers",
     value: "10,000",
   },
   {
@@ -35,6 +32,7 @@ const AchievementsSection = () => {
     <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
       <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
         {achievementsList.map((achievement, index) => {
+
           return (
             <div
               key={index}
@@ -44,8 +42,8 @@ const AchievementsSection = () => {
                 {achievement.prefix}
                 <AnimatedNumbers
                   includeComma
-                  animateToNumber={parseInt(achievement.value)}
-                  locale="en-US"
+                  animateToNumber={parseInt(achievement.value.replace(/,/g, ""))}
+                  locale="en-ZA"
                   className="text-white text-4xl font-bold"
                   configs={(_, index) => {
                     return {
