@@ -68,6 +68,15 @@ const projectsData = [
     gitUrl: "https://github.com/Paxton425/facebook",
     previewUrl: "https://paxton425.github.io/facebook/public_html/",
   },
+  {
+    id: 8,
+    title: "Contacts Manager",
+    description: "A simple desktop contacts manager application built with java fx",
+    image: "/images/projects/8.png",
+    tag: ["All", "Java"],
+    gitUrl: "https://github.com/Paxton425/contacts-manager",
+    previewUrl: "/",
+  }
 ];
 
 const ProjectsSection = () => {
