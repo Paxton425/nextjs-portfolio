@@ -1,31 +1,28 @@
-import { NextResponse } from "next/server";
+import { Resend } from 'resend';
 import { EmailTemplate } from "../../components/EmailTemplate";
-import nodemailer from 'nodemailer';
+import { NextResponse } from "next/server";
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.example.com',
-  port: 587,
-  secure: false, // or 'STARTTLS'
-  auth: {
-    user: process.env.FROM_EMAIL,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-});
+// Initialize Resend with API Key
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req, res) {
-  const { from, subject, message } = await req.json();
+export async function POST(req) {
   try {
-    const mailOptions = {
+    const { from, subject, message } = await req.json();
+
+    const { data, error } = await resend.emails.send({
       from: process.env.FROM_EMAIL,
-      to: process.env.TO_EMAIL,
+      to: [process.env.TO_EMAIL],
+      reply_to: from, 
       subject: subject,
-      html: <EmailTemplate From={from} Subject={subject} Message={message} />,
-    };
-    const data = await transporter.sendMail(mailOptions);
-    console.log(data);
+      react: <EmailTemplate From={from} Subject={subject} Message={message} />,
+    });
+
+    if (error) {
+      return NextResponse.json({ error }, { status: 500 });
+    }
+
     return NextResponse.json(data);
   } catch (error) {
-    console.log(error);
-    return NextResponse.json({ error });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

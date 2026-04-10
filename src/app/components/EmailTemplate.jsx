@@ -1,29 +1,56 @@
-import * as React from 'react';
-import { Html } from '@react-email/html';
+import {
+  Body,
+  Container,
+  Head,
+  Heading,
+  Hr,
+  Html,
+  Preview,
+  Section,
+  Text,
+  Tailwind,
+} from "@react-email/components";
+import * as React from "react";
 
-export function EmailTemplate(props) {
-  const { Subject, From, Message } = props;
+export const EmailTemplate = ({ From, Subject, Message }) => (
+  <Html>
+    <Head />
+    <Preview>New portfolio message: {Subject}</Preview>
+    <Tailwind>
+      <Body className="bg-slate-50 my-auto mx-auto font-sans">
+        <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px] bg-white shadow-sm">
+          <Section className="mt-[32px]">
+            <Text className="text-purple-600 text-[12px] font-semibold tracking-wide uppercase m-0">
+              Portfolio Message
+            </Text>
+            <Heading className="text-black text-[24px] font-normal text-left p-0 my-[30px] mx-0">
+              {Subject}
+            </Heading>
+          </Section>
+          
+          <Text className="text-black text-[14px] leading-[24px]">
+            Hello Sphelele,
+          </Text>
+          
+          <Text className="text-black text-[14px] leading-[24px]">
+            You've received a new message from <strong>{From}</strong>:
+          </Text>
 
-  return (
-    <Html lang="en">
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{Subject}</title>
-      </head>  
-      <body>
-        <div style={{padding: "20px", fontFamily: "Arial"}} className="container">
-          <div className="header">
-            <p>From: {From}</p>
-            <h1 style={{backgroundColor: "#d6d6d6", borderRadius: "30px", padding: "20px"}}>{Subject}</h1>
-          </div>
-          <div style={{backgroundColor: "#d6d6d6", padding: "20px"}} className="message">
-            <p>{Message}</p>
-          </div>
-        </div>
-      </body>
-    </Html>
-  );
-}
+          <Section className="bg-slate-100 rounded-lg p-[20px] my-[24px]">
+            <Text className="text-slate-700 italic text-[15px] leading-[24px] m-0">
+              "{Message}"
+            </Text>
+          </Section>
+
+          <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
+          
+          <Text className="text-[#666666] text-[12px] leading-[24px]">
+            This email was sent via your Next.js portfolio contact form.
+          </Text>
+        </Container>
+      </Body>
+    </Tailwind>
+  </Html>
+);
 
 export default EmailTemplate;

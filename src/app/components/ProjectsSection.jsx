@@ -8,10 +8,10 @@ const projectsData = [
   {
     id: 1,
     title: "React Portfolio Website",
-    description: "Project 1 description",
+    description: "React.js portfolio project",
     image: "/images/projects/1.png",
     tag: ["All", "React"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/Paxton425/nextjs-portfolio.git",
     previewUrl: "/",
   },
   {
@@ -25,21 +25,21 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "Laravel full-stack e-commerce website.",
+    title: "School Grades Management System",
+    description: "Spring Boot MVC full-stack, School management and grades tracking system.",
     image: "/images/projects/3.png",
-    tag: ["All", "PHP"],
-    gitUrl: "https://github.com/Paxton425/laravel-ecommerce",
+    tag: ["All", "Java"],
+    gitUrl: "https://github.com/Paxton425/School-Grading-System.git",
     previewUrl: "/",
   },
   {
     id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
+    title: "Code Editor",
+    description: "React.js + Vite code editor, multi-language compilation",
     image: "/images/projects/4.png",
-    tag: ["All", ".NET MVC"],
-    gitUrl: "/",
-    previewUrl: "/",
+    tag: ["All", "React.js"],
+    gitUrl: "https://github.com/Paxton425/code-editor.git",
+    previewUrl: "https://paxton425.github.io/code-editor/",
   },
   {
     id: 5,
@@ -115,13 +115,13 @@ const ProjectsSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="PHP"
-          isSelected={tag === "PHP"}
+          name="Java"
+          isSelected={tag === "Java"}
         />
         <ProjectTag
           onClick={handleTagChange}
-          name=".NET MVC"
-          isSelected={tag === ".NET MVC"}
+          name="Web"
+          isSelected={tag === "Web"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
