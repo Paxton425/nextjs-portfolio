@@ -40,7 +40,7 @@ const SkillBar = ({ name, level }) => {
 const SKILLS_DATA = [
   {
     category: "Core Frontend",
-    icon: "🎨",
+    icon: "💻",
     skills: [
       { name: "React.js", level: 90 },
       { name: "Next.js", level: 85 },

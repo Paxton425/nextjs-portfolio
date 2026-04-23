@@ -8,7 +8,7 @@ const projectsData = [
   {
     id: 1,
     title: "React Portfolio Website",
-    description: "React.js portfolio project",
+    description: "Well, this very aesthetic website you're browing through.☺️",
     image: "/images/projects/1.png",
     tag: ["All", "React"],
     gitUrl: "https://github.com/Paxton425/nextjs-portfolio.git",
@@ -16,12 +16,12 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Invoice Generator App",
-    description: "A react.js web app that generates invoices for inserted product data.",
+    title: "FT-Academy Student Management API",
+    description: "ASP.NET MVC Student Managemenet API + SQL Database, Hosted in Microsoft Azure",
     image: "/images/projects/2.png",
-    tag: ["All", "React.js"],
-    gitUrl: "https://github.com/Paxton425/invoice-generator",
-    previewUrl: "https://paxton425.github.io/invoice-generator/",
+    tag: ["All", ".NET"],
+    gitUrl: "https://github.com/Paxton425/FTAcademy_Students_Management_API",
+    previewUrl: "https://ftacademystudentmnagementapi-hkdzf6awerfefjdv.brazilsouth-01.azurewebsites.net/api/students/all_students_data",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const projectsData = [
     image: "/images/projects/3.png",
     tag: ["All", "Java"],
     gitUrl: "https://github.com/Paxton425/School-Grading-System.git",
-    previewUrl: "/",
+    previewUrl: "https://nexusgrade.duckdns.org/dashboard",
   },
   {
     id: 4,
@@ -43,12 +43,12 @@ const projectsData = [
   },
   {
     id: 5,
-    title: "IT bussiness website",
-    description: "A demo website for an IT bussiness",
+    title: "Invoice Generator App",
+    description: "A react.js web app that generates invoices for inserted product data.",
     image: "/images/projects/5.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/Paxton425/netfocalexpress/tree/main",
-    previewUrl: "https://paxton425.github.io/netfocalexpress/",
+    tag: ["All", "React.js"],
+    gitUrl: "https://github.com/Paxton425/invoice-generator",
+    previewUrl: "https://paxton425.github.io/invoice-generator/",
   },
   {
     id: 6,
@@ -71,11 +71,20 @@ const projectsData = [
   {
     id: 8,
     title: "Contacts Manager",
-    description: "A simple desktop contacts manager application built with java fx",
+    description: "A lightweight desktop contacts manager application built with javafx",
     image: "/images/projects/8.png",
     tag: ["All", "Java"],
     gitUrl: "https://github.com/Paxton425/contacts-manager",
     previewUrl: "/",
+  },
+  {
+    id: 9,
+    title: "IT bussiness website",
+    description: "A demo website for an IT bussiness",
+    image: "/images/projects/9.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Paxton425/netfocalexpress/tree/main",
+    previewUrl: "https://paxton425.github.io/netfocalexpress/",
   }
 ];
 
@@ -110,13 +119,18 @@ const ProjectsSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="React.js"
-          isSelected={tag === "React.js"}
+          name="Java"
+          isSelected={tag === "Java"}
+        />
+         <ProjectTag
+          onClick={handleTagChange}
+          name=".NET"
+          isSelected={tag === ".NET"}
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Java"
-          isSelected={tag === "Java"}
+          name="React.js"
+          isSelected={tag === "React.js"}
         />
         <ProjectTag
           onClick={handleTagChange}

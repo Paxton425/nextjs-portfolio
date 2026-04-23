@@ -2,6 +2,7 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
+import { AcademicCapIcon } from "@heroicons/react/24/solid";
 
 const TAB_DATA = [
   {
@@ -22,12 +23,34 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2 space-y-2">
-        <li>Durban University Of Technology (Dip ICT)</li>
-        <li>Simplilearn (Full Stack)</li>
-        <li>Ndlela Secondary School</li>
+  <ul className="list-disc pl-2 space-y-2">
+    <li>
+      Durban University Of Technology
+      <ul className="pl-4"> 
+        <li className="flex items-center gap-2">
+          <AcademicCapIcon className="h-6 w-6 text-gray-700" />
+          <span>Diploma in ICT : Applications Development</span>
+        </li>
       </ul>
-    ),
+    </li>
+    <li>Simplilearn
+      <ul className="pl-4">
+        <li className="flex items-center gap-2">
+          <AcademicCapIcon className="h-6 w-6 text-gray-700" />
+          <span>Java For Beginners</span>
+        </li>
+      </ul>
+    </li>
+    <li>Ndlela Secondary School
+      <ul className="pl-4">
+        <li className="flex items-center gap-2">
+          <AcademicCapIcon className="h-6 w-6 text-gray-700" />
+          <span>High School Degree</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+),
   },
   {
     title: "Certifications",
@@ -69,7 +92,7 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg text-slate-300">
-            I am Sphelele, a dedicated React and Next.js Full-Stack Web Developer. 
+            I am Sphelele, a dedicated Java, MERN and Full-Stack Web Developer. 
             I enjoy building interactive and responsive web applications, working with 
             both frontend and backend technologies to create seamless user experiences.
           </p>
