@@ -1,0 +1,8 @@
+@media screen and (max-width: 768px) {
+  /* Styles apply only to screens 768px wide or smaller */
+  
+}
+
+.overlay {
+  transition: opacity 500ms;
+}

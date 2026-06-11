@@ -1,4 +1,5 @@
 "use client";
+import "./components-style.css"
 import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
@@ -7,12 +8,12 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Well, this very aesthetic website you're browing through.☺️",
+    title: "Meta(Social Media) Analytics Platform",
+    description: "A full-stack enterprise analytics platform built on the Next.js App Router framework",
     image: "/images/projects/1.png",
     tag: ["All", "React"],
-    gitUrl: "https://github.com/Paxton425/nextjs-portfolio.git",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Paxton425/Metrics-Tracker-Engine.git",
+    previewUrl: "https://metrics-tracker-engine.vercel.app/login",
   },
   {
     id: 2,
@@ -52,12 +53,12 @@ const projectsData = [
   },
   {
     id: 6,
-    title: "Butchery resturant website",
-    description: "A website for a local bucthery resturant and shop.",
-    image: "/images/projects/6.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/Paxton425/amandlaendodabutcher",
-    previewUrl: "https://paxton425.github.io/amandlaendodabutcher/#home",
+    title: "Contacts Manager",
+    description: "A lightweight desktop contacts manager application built with javafx",
+    image: "/images/projects/8.png",
+    tag: ["All", "Java"],
+    gitUrl: "https://github.com/Paxton425/contacts-manager",
+    previewUrl: "/",
   },
   {
     id: 7,
@@ -70,12 +71,12 @@ const projectsData = [
   },
   {
     id: 8,
-    title: "Contacts Manager",
-    description: "A lightweight desktop contacts manager application built with javafx",
-    image: "/images/projects/8.png",
-    tag: ["All", "Java"],
-    gitUrl: "https://github.com/Paxton425/contacts-manager",
-    previewUrl: "/",
+    title: "Butchery resturant website",
+    description: "A website for a local bucthery resturant and shop.",
+    image: "/images/projects/6.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Paxton425/amandlaendodabutcher",
+    previewUrl: "https://paxton425.github.io/amandlaendodabutcher/#home",
   },
   {
     id: 9,
@@ -92,6 +93,10 @@ const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const [ activeCardId, setctiveCardId ] = useState(null);
+  const activeCardHandler = (cardId) =>{
+    setctiveCardId(cardId);
+  };
 
   const handleTagChange = (newTag) => {
     setTag(newTag);
@@ -111,7 +116,7 @@ const ProjectsSection = () => {
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+      <div className="project-tags-container text-white grid grid-cols-2 lg:flex lg:flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
           onClick={handleTagChange}
           name="All"
@@ -149,11 +154,14 @@ const ProjectsSection = () => {
           >
             <ProjectCard
               key={project.id}
+              id={project.id}
               title={project.title}
               description={project.description}
               imgUrl={project.image}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
+              activeCardId={activeCardId}
+              activeCardHandler={activeCardHandler}
             />
           </motion.li>
         ))}
