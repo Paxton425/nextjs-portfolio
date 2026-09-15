@@ -71,11 +71,11 @@ const HeroSection = () => {
           {/* Tailwind v4 optimized background circle */}
           <div className="rounded-full bg-neutral-900 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative shadow-2xl shadow-purple-500/20">
             <Image
-              src="/images/hero-guy-image.png"
+              src="/images/app_images/hero-image-me.png"
               alt="hero image"
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={350}
-              height={350}
+              width={48000}
+              height={48000}
               priority // Important for Hero images!
             />
           </div>

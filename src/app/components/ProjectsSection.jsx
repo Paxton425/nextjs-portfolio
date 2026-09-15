@@ -10,25 +10,22 @@ const projectsData = [
     id: 1,
     title: "Meta(Social Media) Analytics Platform",
     description: "A full-stack enterprise analytics platform built on the Next.js App Router framework",
-    image: "/images/projects/1.png",
-    tag: ["All", "React"],
+    tag: ["All", "React.js"],
     gitUrl: "https://github.com/Paxton425/Metrics-Tracker-Engine.git",
     previewUrl: "https://metrics-tracker-engine.vercel.app/login",
-  },
+  }, 
   {
     id: 2,
-    title: "FT-Academy Student Management API",
-    description: "ASP.NET MVC Student Managemenet API + SQL Database, Hosted in Microsoft Azure",
-    image: "/images/projects/2.png",
-    tag: ["All", ".NET"],
-    gitUrl: "https://github.com/Paxton425/FTAcademy_Students_Management_API",
-    previewUrl: "https://ftacademystudentmnagementapi-hkdzf6awerfefjdv.brazilsouth-01.azurewebsites.net/api/students/all_students_data",
+    title: "Web Services Website",
+    description: "React.js + Vite Web services markertting web app",
+    tag: ["All", "React.js"],
+    gitUrl: "https://github.com/Paxton425/web-services-app.git",
+    previewUrl: "https://paxton425.github.io/web-services-app",
   },
   {
     id: 3,
     title: "School Grades Management System",
     description: "Spring Boot MVC full-stack, School management and grades tracking system.",
-    image: "/images/projects/3.png",
     tag: ["All", "Java"],
     gitUrl: "https://github.com/Paxton425/School-Grading-System.git",
     previewUrl: "https://nexusgrade.duckdns.org/dashboard",
@@ -37,7 +34,6 @@ const projectsData = [
     id: 4,
     title: "Code Editor",
     description: "React.js + Vite code editor, multi-language compilation",
-    image: "/images/projects/4.png",
     tag: ["All", "React.js"],
     gitUrl: "https://github.com/Paxton425/code-editor.git",
     previewUrl: "https://paxton425.github.io/code-editor/",
@@ -46,34 +42,30 @@ const projectsData = [
     id: 5,
     title: "Invoice Generator App",
     description: "A react.js web app that generates invoices for inserted product data.",
-    image: "/images/projects/5.png",
     tag: ["All", "React.js"],
     gitUrl: "https://github.com/Paxton425/invoice-generator",
     previewUrl: "https://paxton425.github.io/invoice-generator/",
-  },
+  }, 
   {
     id: 6,
+    title: "FT-Academy Student Management API",
+    description: "ASP.NET MVC Student Managemenet API + SQL Database, Hosted in Microsoft Azure",
+    tag: ["All", ".NET"],
+    gitUrl: "https://github.com/Paxton425/FTAcademy_Students_Management_API",
+    previewUrl: "https://ftacademystudentmnagementapi-hkdzf6awerfefjdv.brazilsouth-01.azurewebsites.net/api/students/all_students_data",
+  },
+  {
+    id: 7,
     title: "Contacts Manager",
     description: "A lightweight desktop contacts manager application built with javafx",
-    image: "/images/projects/8.png",
     tag: ["All", "Java"],
     gitUrl: "https://github.com/Paxton425/contacts-manager",
     previewUrl: "/",
   },
   {
-    id: 7,
-    title: "Facebook Clone",
-    description: "Customised Facebook Login Page Clone",
-    image: "/images/projects/7.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/Paxton425/facebook",
-    previewUrl: "https://paxton425.github.io/facebook/public_html/",
-  },
-  {
     id: 8,
     title: "Butchery resturant website",
     description: "A website for a local bucthery resturant and shop.",
-    image: "/images/projects/6.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Paxton425/amandlaendodabutcher",
     previewUrl: "https://paxton425.github.io/amandlaendodabutcher/#home",
@@ -82,12 +74,21 @@ const projectsData = [
     id: 9,
     title: "IT bussiness website",
     description: "A demo website for an IT bussiness",
-    image: "/images/projects/9.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Paxton425/netfocalexpress/tree/main",
     previewUrl: "https://paxton425.github.io/netfocalexpress/",
+  },
+  {
+    id: 10,
+    title: "Facebook Clone",
+    description: "Customised Facebook Login Page Clone",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Paxton425/facebook",
+    previewUrl: "https://paxton425.github.io/facebook/public_html/",
   }
 ];
+
+const base_image_url = "/images/projects/";
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
@@ -157,7 +158,7 @@ const ProjectsSection = () => {
               id={project.id}
               title={project.title}
               description={project.description}
-              imgUrl={project.image}
+              imgUrl={base_image_url+project.id+".png"}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
               activeCardId={activeCardId}
