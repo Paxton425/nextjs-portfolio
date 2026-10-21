@@ -32,9 +32,9 @@ const projectsData = [
   },
   {
     id: 4,
-    title: "Code Editor",
-    description: "React.js + Vite code editor, multi-language compilation",
-    tag: ["All", "React.js"],
+    title: "Desktop IDE",
+    description: "Simple lightweight javaFX Desktop IDE application. With an intergrated fully functional command line interface.",
+    tag: ["All", "Java"],
     gitUrl: "https://github.com/Paxton425/code-editor.git",
     previewUrl: "https://paxton425.github.io/code-editor/",
   },
@@ -85,6 +85,14 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Paxton425/facebook",
     previewUrl: "https://paxton425.github.io/facebook/public_html/",
+  },
+  {
+    id: 11,
+    title: "Code Editor",
+    description: "React.js + Vite code editor, multi-language compilation",
+    tag: ["All", "React.js"],
+    gitUrl: "https://github.com/Paxton425/code-editor.git",
+    previewUrl: "https://paxton425.github.io/code-editor/",
   }
 ];
 
